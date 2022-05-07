@@ -12,6 +12,7 @@ print(text_unquote(test))
 
 
 'frida -U -f io.dcloud.W2Awww.soliao.com -l D:/Projects/souliao/cipher.js --no-pause'
+'adb logcat | io.dcloud.W2Awww.soliao.com >D:\log.txt'
 
 
 """

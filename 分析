@@ -1,0 +1,21 @@
+at f.a.a.a.a.l.a.yd.b(TechnologyCenterDetailPresenter.java:1)
+
+
+public void b(HashMap<String, Object> hashMap) {
+        e.b.f12363a.a().z(f.a.a.a.a.a.d.a(hashMap)).subscribeOn(b.b()).observeOn(f.b.a.a.b.a()).subscribe(new ud(this));
+    }
+
+
+public void p() {
+        HashMap<String, Object> hashMap = new HashMap<>();
+        HashMap a2 = d.d.a.a.a.a((Object) "actionType", (Object) SocializeConstants.PROTOCOL_VERSON);
+        d.d.a.a.a.a("user_Id", "", a2, "a", "token", "", b.f7316a);
+        a2.put("c", this.w);
+        d.d.a.a.a.a(a2, "d", this.x, "strTime");
+        hashMap.put("a", "8.0");
+        hashMap.put(b.f7316a, a2);
+        this.v.b(hashMap);
+        this.E.show();
+    }
+
+
