@@ -43,4 +43,5 @@ def case_detail():
     pp.pprint(resp.json())
 
 
-case_detail()
+if __name__ == '__main__':
+    case_detail()
