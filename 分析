@@ -1,21 +1,65 @@
 at f.a.a.a.a.l.a.yd.b(TechnologyCenterDetailPresenter.java:1)
 
 
-public void b(HashMap<String, Object> hashMap) {
-        e.b.f12363a.a().z(f.a.a.a.a.a.d.a(hashMap)).subscribeOn(b.b()).observeOn(f.b.a.a.b.a()).subscribe(new ud(this));
+@Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
+public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        this.f14950a.mo17451a(baseQuickAdapter, view, i);
     }
 
 
-public void p() {
+/* renamed from: a */
+public /* synthetic */ void mo17451a(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        TechnologyCenterModel.JBean jBean = (TechnologyCenterModel.JBean) baseQuickAdapter.getItem(i);
+        int id = view.getId();
+        if (id == 2131296573) {
+            TechnologyCenterModel.JBean jBean2 = (TechnologyCenterModel.JBean) baseQuickAdapter.getItem(i);
+            if (jBean2.isCollect()) {
+                view.setBackgroundResource(C4472R$drawable.star);
+                jBean2.setCollect(false);
+            } else {
+                jBean2.setCollect(true);
+                view.setBackgroundResource(C4472R$drawable.star_select);
+            }
+            if (1 == jBean2.getCaseType()) {
+                mo17453a(jBean2.getId(), "4.0");
+            } else {
+                mo17453a(jBean2.getId(), DispatchConstants.VER_CODE);
+            }
+        } else if (id == 2131296693) {
+            if (this.f19902z.equals("检测标准")) {
+                FragmentManager g = mo3969g();
+                StringBuilder b = outline.m9595b("是否要下载");
+                b.append(jBean.getTestMethod());
+                b.append("检测标准？");
+                DelGoodsDialogFragment.m18558a(g, "提示", 0, b.toString(), "", "取消", "下载", new C2917Oe(this, jBean));
+                return;
+            }
+            Intent intent = new Intent(this, TechnologyCenterDetailActivity.class);
+            intent.putExtra("title", jBean.getTitle());
+            intent.putExtra("id", jBean.getId());
+            intent.putExtra("isCollect", jBean.isCollect());
+            intent.putExtra("caseType", jBean.getCaseType() + "");
+            startActivity(intent);
+        }
+    }
+
+
+/* renamed from: a */
+    public final void mo17453a(String str, String str2) {
         HashMap<String, Object> hashMap = new HashMap<>();
-        HashMap a2 = d.d.a.a.a.a((Object) "actionType", (Object) SocializeConstants.PROTOCOL_VERSON);
-        d.d.a.a.a.a("user_Id", "", a2, "a", "token", "", b.f7316a);
-        a2.put("c", this.w);
-        d.d.a.a.a.a(a2, "d", this.x, "strTime");
+        HashMap a = outline.m9571a((Object) "actionType", (Object) str2);
+        a.put("a", C2763m.m12909a("user_Id", ""));
+        a.put(HttpDnsManager.f10072a, C2763m.m12909a("token", ""));
+        a.put("c", str);
+        a.put("strTime", CommonUtils.m12892b());
         hashMap.put("a", "8.0");
-        hashMap.put(b.f7316a, a2);
-        this.v.b(hashMap);
-        this.E.show();
+        hashMap.put(HttpDnsManager.f10072a, a);
+        this.f19897u.mo15279a(hashMap);
+        this.f19890Y.show();
     }
 
 
+/* renamed from: a */
+    public void mo15279a(HashMap<String, Object> hashMap) {
+        C3398e.C3400b.f15870a.mo15114a().mo15054F(CommonUtils.m12890a(hashMap)).subscribeOn(Schedulers.m15187b()).observeOn(C3929b.m15020a()).subscribe(new TechnologyCenterPresenter(this));
+    }
