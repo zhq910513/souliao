@@ -1,65 +1,339 @@
-at f.a.a.a.a.l.a.yd.b(TechnologyCenterDetailPresenter.java:1)
-
-
-@Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
-public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        this.f14950a.mo17451a(baseQuickAdapter, view, i);
-    }
+at f.a.a.a.a.a.d.a(CommonUtils.java:41)
 
 
 /* renamed from: a */
-public /* synthetic */ void mo17451a(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        TechnologyCenterModel.JBean jBean = (TechnologyCenterModel.JBean) baseQuickAdapter.getItem(i);
-        int id = view.getId();
-        if (id == 2131296573) {
-            TechnologyCenterModel.JBean jBean2 = (TechnologyCenterModel.JBean) baseQuickAdapter.getItem(i);
-            if (jBean2.isCollect()) {
-                view.setBackgroundResource(C4472R$drawable.star);
-                jBean2.setCollect(false);
+public static String m12890a(Object obj) {
+        KeyFactory keyFactory;
+        try {
+            byte[] a = MyBase64.m12901a("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgVV2WmQVfLUqEgXmcSh6N0d5WWjONmiN2UQXwyADctCBBDB8+60zYqH9wpoxhIXxOOyFzr5HzHaKJh22pak/AQBCqu06POajBB3Nb/tPt/zHelPytSiAdboeY2jRsW0rgDiKQ1+JEDFHi+yMW7ldcsogpsmEhrUkcuE4PzqCYlQIDAQAB");
+            if (Build.VERSION.SDK_INT >= 28) {
+                keyFactory = KeyFactory.getInstance("RSA");
             } else {
-                jBean2.setCollect(true);
-                view.setBackgroundResource(C4472R$drawable.star_select);
+                keyFactory = KeyFactory.getInstance("RSA", "BC");
             }
-            if (1 == jBean2.getCaseType()) {
-                mo17453a(jBean2.getId(), "4.0");
+            String a2 = ViewGroupUtilsApi18.m2063a(JSON.toJSONString(obj), keyFactory.generatePublic(new X509EncodedKeySpec(a)));
+            String encode = URLEncoder.encode(a2, "utf-8");
+            Log.e("fwefwefwe", "getUserInfo:加密后 " + a2);
+            String a3 = ViewGroupUtilsApi18.m2062a(a2, keyFactory.generatePrivate(new PKCS8EncodedKeySpec(MyBase64.m12901a("MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKBVXZaZBV8tSoSBeZxKHo3R3lZaM42aI3ZRBfDIANy0IEEMHz7rTNiof3CmjGEhfE47IXOvkfMdoomHbalqT8BAEKq7To85qMEHc1v+0+3/Md6U/K1KIB1uh5jaNGxbSuAOIpDX4kQMUeL7IxbuV1yyiCmyYSGtSRy4Tg/OoJiVAgMBAAECgYB4YqB6yzq1VBR3mZ/uMdjvM3116RR8ZhfqZrvHJuU+0iDFtoxfed2hcCMAOo19AN+M/ekIK/OyT7YS/ZThd+mYgsXSDvmAM1iSylZ36ABT3btFTYu6xtdf2M4uGloXue50zXT6nPVmEmbO7BWQZgJPxvy3IwkvBEUWJkdS2E2soQJBAPTuNFL+vDlempJ3kggJjCFr2J8+Zt2KpyTeICllIo+DwA35ef5CCLb/7grsBviZ3KVIFNjw1mykqcM6JUjgQjcCQQCnlGQR7vBb7mO0kjsX1cQOY6lFBcZ5JEO4K97HqF0LdvkQ9yVS0jNikkBrrRI6+wZkVgZIr2tv+9Y+TJh+LIWTAkEA18S455xtKIUE2p7nUJlIj3C4ZqDMccJhuILOBmmH5rIEEMuEAs8daklP5ONEyOCSljBH3U1dOFxfCRNCIU8eRQJAJvliFLGngRn+Yl6oE7EJufb/xSfEsyP2A/1gALtteF8hKgrwyURN4xz0kpZb6Q+8utUu/PSfXhoKB880oBOmtQJAJVzyvuHQVlWjS08yFOvCpT1LpGVC4LO0X3CoyHmXU91F5VOCMBONuCAO09nvHCP/WpSrutQPYtj4JrVtr9uClA=="))));
+            Log.e("fwefwefwe", "getUserInfo:解密后 " + a3);
+            return encode;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String a(Object obj) {
+        KeyFactory keyFactory;
+        try {
+            byte[] a2 = h.a("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgVV2WmQVfLUqEgXmcSh6N0d5WWjONmiN2UQXwyADctCBBDB8+60zYqH9wpoxhIXxOOyFzr5HzHaKJh22pak/AQBCqu06POajBB3Nb/tPt/zHelPytSiAdboeY2jRsW0rgDiKQ1+JEDFHi+yMW7ldcsogpsmEhrUkcuE4PzqCYlQIDAQAB");
+            if (Build.VERSION.SDK_INT >= 28) {
+                keyFactory = KeyFactory.getInstance("RSA");
             } else {
-                mo17453a(jBean2.getId(), DispatchConstants.VER_CODE);
+                keyFactory = KeyFactory.getInstance("RSA", "BC");
             }
-        } else if (id == 2131296693) {
-            if (this.f19902z.equals("检测标准")) {
-                FragmentManager g = mo3969g();
-                StringBuilder b = outline.m9595b("是否要下载");
-                b.append(jBean.getTestMethod());
-                b.append("检测标准？");
-                DelGoodsDialogFragment.m18558a(g, "提示", 0, b.toString(), "", "取消", "下载", new C2917Oe(this, jBean));
-                return;
-            }
-            Intent intent = new Intent(this, TechnologyCenterDetailActivity.class);
-            intent.putExtra("title", jBean.getTitle());
-            intent.putExtra("id", jBean.getId());
-            intent.putExtra("isCollect", jBean.isCollect());
-            intent.putExtra("caseType", jBean.getCaseType() + "");
-            startActivity(intent);
+            String a3 = M.a(JSON.toJSONString(obj), keyFactory.generatePublic(new X509EncodedKeySpec(a2)));
+            String encode = URLEncoder.encode(a3, "utf-8");
+            Log.e("fwefwefwe", "getUserInfo:加密后 " + a3);
+            String a4 = M.a(a3, keyFactory.generatePrivate(new PKCS8EncodedKeySpec(h.a("MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKBVXZaZBV8tSoSBeZxKHo3R3lZaM42aI3ZRBfDIANy0IEEMHz7rTNiof3CmjGEhfE47IXOvkfMdoomHbalqT8BAEKq7To85qMEHc1v+0+3/Md6U/K1KIB1uh5jaNGxbSuAOIpDX4kQMUeL7IxbuV1yyiCmyYSGtSRy4Tg/OoJiVAgMBAAECgYB4YqB6yzq1VBR3mZ/uMdjvM3116RR8ZhfqZrvHJuU+0iDFtoxfed2hcCMAOo19AN+M/ekIK/OyT7YS/ZThd+mYgsXSDvmAM1iSylZ36ABT3btFTYu6xtdf2M4uGloXue50zXT6nPVmEmbO7BWQZgJPxvy3IwkvBEUWJkdS2E2soQJBAPTuNFL+vDlempJ3kggJjCFr2J8+Zt2KpyTeICllIo+DwA35ef5CCLb/7grsBviZ3KVIFNjw1mykqcM6JUjgQjcCQQCnlGQR7vBb7mO0kjsX1cQOY6lFBcZ5JEO4K97HqF0LdvkQ9yVS0jNikkBrrRI6+wZkVgZIr2tv+9Y+TJh+LIWTAkEA18S455xtKIUE2p7nUJlIj3C4ZqDMccJhuILOBmmH5rIEEMuEAs8daklP5ONEyOCSljBH3U1dOFxfCRNCIU8eRQJAJvliFLGngRn+Yl6oE7EJufb/xSfEsyP2A/1gALtteF8hKgrwyURN4xz0kpZb6Q+8utUu/PSfXhoKB880oBOmtQJAJVzyvuHQVlWjS08yFOvCpT1LpGVC4LO0X3CoyHmXU91F5VOCMBONuCAO09nvHCP/WpSrutQPYtj4JrVtr9uClA=="))));
+            Log.e("fwefwefwe", "getUserInfo:解密后 " + a4);
+            return encode;
+        } catch (Exception e2) {
+            e2.printStackTrace();
+            return null;
         }
     }
 
 
 /* renamed from: a */
-    public final void mo17453a(String str, String str2) {
-        HashMap<String, Object> hashMap = new HashMap<>();
-        HashMap a = outline.m9571a((Object) "actionType", (Object) str2);
-        a.put("a", C2763m.m12909a("user_Id", ""));
-        a.put(HttpDnsManager.f10072a, C2763m.m12909a("token", ""));
-        a.put("c", str);
-        a.put("strTime", CommonUtils.m12892b());
-        hashMap.put("a", "8.0");
-        hashMap.put(HttpDnsManager.f10072a, a);
-        this.f19897u.mo15279a(hashMap);
-        this.f19890Y.show();
+public static byte[] m12901a(String str) throws Exception {
+        byte[] bytes = str.getBytes("utf-8");
+        int length = bytes.length;
+        byte[] bArr = new byte[((length * 3) / 4)];
+        byte[] bArr2 = new byte[4];
+        int i = 0;
+        int i2 = 0;
+        for (byte b : bytes) {
+            byte b2 = (byte) (b & Byte.MAX_VALUE);
+            byte[] bArr3 = f14737b;
+            byte b3 = bArr3[b2];
+            if (b3 < -5) {
+                return null;
+            }
+            if (b3 >= -1) {
+                int i3 = i + 1;
+                bArr2[i] = b2;
+                int i4 = 3;
+                if (i3 > 3) {
+                    if (bArr2[2] == 61) {
+                        bArr[i2] = (byte) ((((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12)) >>> 16);
+                        i4 = 1;
+                    } else if (bArr2[3] == 61) {
+                        int i5 = ((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12) | ((bArr3[bArr2[2]] & 255) << 6);
+                        bArr[i2] = (byte) (i5 >>> 16);
+                        bArr[i2 + 1] = (byte) (i5 >>> 8);
+                        i4 = 2;
+                    } else {
+                        try {
+                            int i6 = (bArr3[bArr2[3]] & 255) | ((bArr3[bArr2[2]] & 255) << 6) | ((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12);
+                            bArr[i2] = (byte) (i6 >> 16);
+                            bArr[i2 + 1] = (byte) (i6 >> 8);
+                            bArr[i2 + 2] = (byte) i6;
+                        } catch (Exception unused) {
+                            i4 = -1;
+                        }
+                    }
+                    i2 += i4;
+                    if (b2 == 61) {
+                        break;
+                    }
+                    i = 0;
+                } else {
+                    i = i3;
+                }
+            }
+        }
+        byte[] bArr4 = new byte[i2];
+        System.arraycopy(bArr, 0, bArr4, 0, i2);
+        return bArr4;
+    }
+}
+
+    public static byte[] a(String str) throws Exception {
+        byte[] bytes = str.getBytes("utf-8");
+        int length = bytes.length;
+        byte[] bArr = new byte[((length * 3) / 4)];
+        byte[] bArr2 = new byte[4];
+        int i2 = 0;
+        int i3 = 0;
+        for (byte b2 : bytes) {
+            byte b3 = (byte) (b2 & Byte.MAX_VALUE);
+            byte[] bArr3 = f11242b;
+            byte b4 = bArr3[b3];
+            if (b4 < -5) {
+                return null;
+            }
+            if (b4 >= -1) {
+                int i4 = i2 + 1;
+                bArr2[i2] = b3;
+                int i5 = 3;
+                if (i4 > 3) {
+                    if (bArr2[2] == 61) {
+                        bArr[i3] = (byte) ((((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12)) >>> 16);
+                        i5 = 1;
+                    } else if (bArr2[3] == 61) {
+                        int i6 = ((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12) | ((bArr3[bArr2[2]] & 255) << 6);
+                        bArr[i3] = (byte) (i6 >>> 16);
+                        bArr[i3 + 1] = (byte) (i6 >>> 8);
+                        i5 = 2;
+                    } else {
+                        try {
+                            int i7 = (bArr3[bArr2[3]] & 255) | ((bArr3[bArr2[2]] & 255) << 6) | ((bArr3[bArr2[0]] & 255) << 18) | ((bArr3[bArr2[1]] & 255) << 12);
+                            bArr[i3] = (byte) (i7 >> 16);
+                            bArr[i3 + 1] = (byte) (i7 >> 8);
+                            bArr[i3 + 2] = (byte) i7;
+                        } catch (Exception unused) {
+                            i5 = -1;
+                        }
+                    }
+                    i3 += i5;
+                    if (b3 == 61) {
+                        break;
+                    }
+                    i2 = 0;
+                } else {
+                    i2 = i4;
+                }
+            }
+        }
+        byte[] bArr4 = new byte[i3];
+        System.arraycopy(bArr, 0, bArr4, 0, i3);
+        return bArr4;
+    }
+}
+
+
+
+/* renamed from: a */
+public static String m2063a(String str, PublicKey publicKey) throws Exception {
+        byte[] bArr;
+        byte[] bytes = str.getBytes("utf-8");
+        Cipher instance = Cipher.getInstance("RSA/None/PKCS1Padding");
+        instance.init(1, publicKey);
+        int length = bytes.length;
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            int i3 = length - i;
+            if (i3 > 0) {
+                if (i3 > 117) {
+                    bArr = instance.doFinal(bytes, i, 117);
+                } else {
+                    bArr = instance.doFinal(bytes, i, i3);
+                }
+                byteArrayOutputStream.write(bArr, 0, bArr.length);
+                i2++;
+                i = i2 * 117;
+            } else {
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+                byteArrayOutputStream.close();
+                return MyBase64.m12900a(byteArray);
+            }
+        }
+    }
+
+    public static String a(String str, PublicKey publicKey) throws Exception {
+        byte[] bArr;
+        byte[] bytes = str.getBytes("utf-8");
+        Cipher instance = Cipher.getInstance("RSA/None/PKCS1Padding");
+        instance.init(1, publicKey);
+        int length = bytes.length;
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        int i2 = 0;
+        int i3 = 0;
+        while (true) {
+            int i4 = length - i2;
+            if (i4 > 0) {
+                if (i4 > 117) {
+                    bArr = instance.doFinal(bytes, i2, 117);
+                } else {
+                    bArr = instance.doFinal(bytes, i2, i4);
+                }
+                byteArrayOutputStream.write(bArr, 0, bArr.length);
+                i3++;
+                i2 = i3 * 117;
+            } else {
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
+                byteArrayOutputStream.close();
+                return f.a.a.a.a.a.h.a(byteArray);
+            }
+        }
     }
 
 
 /* renamed from: a */
-    public void mo15279a(HashMap<String, Object> hashMap) {
-        C3398e.C3400b.f15870a.mo15114a().mo15054F(CommonUtils.m12890a(hashMap)).subscribeOn(Schedulers.m15187b()).observeOn(C3929b.m15020a()).subscribe(new TechnologyCenterPresenter(this));
+public static String m12900a(byte[] bArr) throws Exception {
+        int length = bArr.length;
+        int i = (length * 4) / 3;
+        byte[] bArr2 = new byte[((length % 3 > 0 ? 4 : 0) + i + (i / 76))];
+        int i2 = length - 2;
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
+        while (i3 < i2) {
+            m12902a(bArr, i3 + 0, 3, bArr2, i4);
+            i5 += 4;
+            if (i5 == 76) {
+                bArr2[i4 + 4] = 10;
+                i4++;
+                i5 = 0;
+            }
+            i3 += 3;
+            i4 += 4;
+        }
+        if (i3 < length) {
+            m12902a(bArr, 0 + i3, length - i3, bArr2, i4);
+            i4 += 4;
+        }
+        return new String(bArr2, 0, i4, "iso-8859-1");
     }
+
+    public static String a(byte[] bArr) throws Exception {
+        int length = bArr.length;
+        int i2 = (length * 4) / 3;
+        byte[] bArr2 = new byte[((length % 3 > 0 ? 4 : 0) + i2 + (i2 / 76))];
+        int i3 = length - 2;
+        int i4 = 0;
+        int i5 = 0;
+        int i6 = 0;
+        while (i4 < i3) {
+            a(bArr, i4 + 0, 3, bArr2, i5);
+            i6 += 4;
+            if (i6 == 76) {
+                bArr2[i5 + 4] = 10;
+                i5++;
+                i6 = 0;
+            }
+            i4 += 3;
+            i5 += 4;
+        }
+        if (i4 < length) {
+            a(bArr, 0 + i4, length - i4, bArr2, i5);
+            i5 += 4;
+        }
+        return new String(bArr2, 0, i5, "iso-8859-1");
+    }
+
+
+/* renamed from: a */
+public static byte[] m12902a(byte[] bArr, int i, int i2, byte[] bArr2, int i3) {
+        int i4 = 0;
+        int i5 = (i2 > 0 ? (bArr[i] << 24) >>> 8 : 0) | (i2 > 1 ? (bArr[i + 1] << 24) >>> 16 : 0);
+        if (i2 > 2) {
+            i4 = (bArr[i + 2] << 24) >>> 24;
+        }
+        int i6 = i5 | i4;
+        if (i2 == 1) {
+            byte[] bArr3 = f14736a;
+            bArr2[i3] = bArr3[i6 >>> 18];
+            bArr2[i3 + 1] = bArr3[(i6 >>> 12) & 63];
+            bArr2[i3 + 2] = 61;
+            bArr2[i3 + 3] = 61;
+            return bArr2;
+        } else if (i2 == 2) {
+            byte[] bArr4 = f14736a;
+            bArr2[i3] = bArr4[i6 >>> 18];
+            bArr2[i3 + 1] = bArr4[(i6 >>> 12) & 63];
+            bArr2[i3 + 2] = bArr4[(i6 >>> 6) & 63];
+            bArr2[i3 + 3] = 61;
+            return bArr2;
+        } else if (i2 != 3) {
+            return bArr2;
+        } else {
+            byte[] bArr5 = f14736a;
+            bArr2[i3] = bArr5[i6 >>> 18];
+            bArr2[i3 + 1] = bArr5[(i6 >>> 12) & 63];
+            bArr2[i3 + 2] = bArr5[(i6 >>> 6) & 63];
+            bArr2[i3 + 3] = bArr5[i6 & 63];
+            return bArr2;
+        }
+    }
+
+    public static byte[] a(byte[] bArr, int i2, int i3, byte[] bArr2, int i4) {
+        int i5 = 0;
+        int i6 = (i3 > 0 ? (bArr[i2] << 24) >>> 8 : 0) | (i3 > 1 ? (bArr[i2 + 1] << 24) >>> 16 : 0);
+        if (i3 > 2) {
+            i5 = (bArr[i2 + 2] << 24) >>> 24;
+        }
+        int i7 = i6 | i5;
+        if (i3 == 1) {
+            byte[] bArr3 = f11241a;
+            bArr2[i4] = bArr3[i7 >>> 18];
+            bArr2[i4 + 1] = bArr3[(i7 >>> 12) & 63];
+            bArr2[i4 + 2] = 61;
+            bArr2[i4 + 3] = 61;
+            return bArr2;
+        } else if (i3 == 2) {
+            byte[] bArr4 = f11241a;
+            bArr2[i4] = bArr4[i7 >>> 18];
+            bArr2[i4 + 1] = bArr4[(i7 >>> 12) & 63];
+            bArr2[i4 + 2] = bArr4[(i7 >>> 6) & 63];
+            bArr2[i4 + 3] = 61;
+            return bArr2;
+        } else if (i3 != 3) {
+            return bArr2;
+        } else {
+            byte[] bArr5 = f11241a;
+            bArr2[i4] = bArr5[i7 >>> 18];
+            bArr2[i4 + 1] = bArr5[(i7 >>> 12) & 63];
+            bArr2[i4 + 2] = bArr5[(i7 >>> 6) & 63];
+            bArr2[i4 + 3] = bArr5[i7 & 63];
+            return bArr2;
+        }
+    }
+
+
+public static final byte[] f14736a = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
+
+    public static final byte[] f11241a = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};

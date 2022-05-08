@@ -1,7 +1,7 @@
 Java.perform(function(){
     console.warn("*** Start Hook ***")
 
-    var hookSig = Java.use('f.a.a.a.a.l.a.Fd');
+    var hookSig = Java.use('f.a.a.a.a.a.d');
     hookSig.a.implementation = function(arr){
         var Map = Java.use('java.util.HashMap');
         console.error("************* args_map 传入值 *************")
