@@ -44,9 +44,8 @@ Java.perform(function(){
         console.error(str)
 
         console.error("*** publicKey值: ***")
-        for obj in publicKey:
-            var JSONObject = Java.use("com.alibaba.fastjson.JSONObject");
-            console.error(JSONObject.toJSON(obj))
+        var JSONObject = Java.use("com.alibaba.fastjson.JSONObject");
+        console.error(JSONObject.toJSON(publicKey))
 
         var return_ns = this.a(str, publicKey);
         console.error("*** 返回值: ***")
