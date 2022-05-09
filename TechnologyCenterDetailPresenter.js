@@ -1,3 +1,7 @@
+// frida -U -f io.dcloud.W2Awww.soliao.com -l D:/Projects/souliao/cipher.js --no-pause
+// frida -U -f io.dcloud.W2Awww.soliao.com -l D:/Projects/souliao/TechnologyCenterDetailPresenter.js --no-pause
+// adb logcat | findstr io.dcloud.W2Awww.soliao.com >D:\log.txt
+
 // 被动调用  整体
 Java.perform(function(){
     console.warn("*** Start Hook ***")
