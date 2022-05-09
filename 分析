@@ -13,9 +13,6 @@ public static String m12890a(Object obj) {
             }
             String a2 = ViewGroupUtilsApi18.m2063a(JSON.toJSONString(obj), keyFactory.generatePublic(new X509EncodedKeySpec(a)));
             String encode = URLEncoder.encode(a2, "utf-8");
-            Log.e("fwefwefwe", "getUserInfo:加密后 " + a2);
-            String a3 = ViewGroupUtilsApi18.m2062a(a2, keyFactory.generatePrivate(new PKCS8EncodedKeySpec(MyBase64.m12901a("MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKBVXZaZBV8tSoSBeZxKHo3R3lZaM42aI3ZRBfDIANy0IEEMHz7rTNiof3CmjGEhfE47IXOvkfMdoomHbalqT8BAEKq7To85qMEHc1v+0+3/Md6U/K1KIB1uh5jaNGxbSuAOIpDX4kQMUeL7IxbuV1yyiCmyYSGtSRy4Tg/OoJiVAgMBAAECgYB4YqB6yzq1VBR3mZ/uMdjvM3116RR8ZhfqZrvHJuU+0iDFtoxfed2hcCMAOo19AN+M/ekIK/OyT7YS/ZThd+mYgsXSDvmAM1iSylZ36ABT3btFTYu6xtdf2M4uGloXue50zXT6nPVmEmbO7BWQZgJPxvy3IwkvBEUWJkdS2E2soQJBAPTuNFL+vDlempJ3kggJjCFr2J8+Zt2KpyTeICllIo+DwA35ef5CCLb/7grsBviZ3KVIFNjw1mykqcM6JUjgQjcCQQCnlGQR7vBb7mO0kjsX1cQOY6lFBcZ5JEO4K97HqF0LdvkQ9yVS0jNikkBrrRI6+wZkVgZIr2tv+9Y+TJh+LIWTAkEA18S455xtKIUE2p7nUJlIj3C4ZqDMccJhuILOBmmH5rIEEMuEAs8daklP5ONEyOCSljBH3U1dOFxfCRNCIU8eRQJAJvliFLGngRn+Yl6oE7EJufb/xSfEsyP2A/1gALtteF8hKgrwyURN4xz0kpZb6Q+8utUu/PSfXhoKB880oBOmtQJAJVzyvuHQVlWjS08yFOvCpT1LpGVC4LO0X3CoyHmXU91F5VOCMBONuCAO09nvHCP/WpSrutQPYtj4JrVtr9uClA=="))));
-            Log.e("fwefwefwe", "getUserInfo:解密后 " + a3);
             return encode;
         } catch (Exception e) {
             e.printStackTrace();
@@ -337,3 +334,38 @@ public static byte[] m12902a(byte[] bArr, int i, int i2, byte[] bArr2, int i3) {
 public static final byte[] f14736a = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
 
     public static final byte[] f11241a = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
+
+
+"""
+******************************************************************************
+*** str值: ***
+{"a":"8.0","b":{"a":"65493","actionType":"1.0","b":"795d7759-0c9c-4b54-8638-1b8d28731d38","c":"","d":"","e":"","f":"","g":"应用案例","h":"","i":"","j":"","k":"","l":"推荐","m":"desc","n":"1","o":"10","r":"","strTime":"1652003356844"}}
+*** publicKey值: ***
+[object Object]
+*** 返回值: ***
+naOSr+hfGwHEqNQvnjaK5xdqJ09rEk0Q9gN+dlm1y2sbjhkAS+9TTjpxD4DRmCqVM4AHSSjnMyIB
+yyGkPhKeE1l1NpHAAQ8XctLMZKA/Gj04FC9I5xVULei1Hf+HQeFCIKJHLAGR2cPJYRH4RMybzwBK
+DU01W4TqS8KK1VkMQ9WfhmD9ux/3LhsKzN7R77ZrujmVrAxR0RBPR85JLf1MoH52V2tCfhk+uJfN
+YU97sWeU2ypHLe9glrApea7AxoX2jy3m0Ld/dnO4FTWpE5iV4qG1gy642mLvLpKHHwzK3FOeo0H+
+VFzUftSleCNxA2iAmhX45HEIb8GX14RpHHeTiwGwkpCxYorCjr5Cyoi2e2z/x0ZfxgUwwe8Zc+oR
+mKa8Mo1iJKpzh+c3GSm3pnH7q4gTsSmtjVZC7t8RXzzhi1W4L49Gt3QVpcRjkidaLoAhfrSjk9a6
+nQsaUBj3Y91Tx+JkWySGRuStpT6L2JiE2LRVGc7h/JROavZloCP6oLIi
+******************************************************************************
+"""
+
+"""
+******************************************************************************
+*** str值: ***
+{"a":"8.0","b":{"a":"65493","actionType":"3.0","b":"795d7759-0c9c-4b54-8638-1b8d28731d38","c":"2412","d":"1","strTime":"1652003398720"}}
+*** publicKey值: ***
+[object Object]
+*** 返回值: ***
+R/2U9Jxq5H8Esm7jW5bB+LreJIKS5jnu6oXT4LuMSByZZWqVanaWKaXRasioUnnsH0urvPxLnbla
+y5myf9c0cOI7//+fojq4S429P6GhbAyjO6+pA921Jz174HBPKkaiKaYZmnG8yiniOWsQ4ylLcsce
+EPq5xTxLEaU6/DRvQakXombCrrpBmMwHLGS4U//b7CZp5n7gW7jRN1F41M6NEqweZ4ILv7zYqVZ2
+TaC59oXymVi9yKK5DaiQog8GaQlFbuGadW7rSLGlH8pfZPUOFVd7O9/P1uLPijrXT58+u4aw6nTI
+O/BdJugrX35d4L/oW+uhEa/BQGfFaz6c5JOGaA==
+******************************************************************************
+"""
+
+keyFactory.generatePublic(new X509EncodedKeySpec(a2))
